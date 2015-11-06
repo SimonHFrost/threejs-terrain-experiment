@@ -6,7 +6,8 @@ var scene = initialize()
 function createSphere () {
   var geometry = new THREE.SphereGeometry(0.5, 0.5, 0.5)
   var material = new THREE.MeshPhongMaterial({
-    color: '#55BB55'
+    color: '#55BB55',
+    shading: THREE.FlatShading
   })
   var mesh = new THREE.Mesh(geometry, material)
   return mesh
@@ -23,17 +24,19 @@ function createDirectionalLight() {
 }
 
 function rotatePlanet() {
-  planet.rotation.y += 0.01
+  planet.rotation.y -= 0.01
 }
 
 var loader = new THREE.JSONLoader(); // init the loader util
 
 var spaceShip
+var planet
 var modelPath = 'model/spaceship.json'
 
 loader.load(modelPath, function (geometry) {
   var material = new THREE.MeshLambertMaterial({
     color: '#ed8989',
+    shading: THREE.FlatShading,
     colorAmbient: [0.480000026226044, 0.480000026226044, 0.480000026226044],
     colorDiffuse: [0.480000026226044, 0.480000026226044, 0.480000026226044],
     colorSpecular: [0.8999999761581421, 0.8999999761581421, 0.8999999761581421]
@@ -48,10 +51,11 @@ loader.load(modelPath, function (geometry) {
   spaceShip.scale.y = 0.1
   spaceShip.scale.z = 0.1
 
-  spaceShip.position.x = 1
   spaceShip.position.z = 1
 
-  scene.add(spaceShip);
+  planet = createSphere()
+  planet.add(spaceShip)
+  scene.add(planet)
 });
 
 
@@ -72,7 +76,5 @@ document.addEventListener("keydown", function( event ) {
 
 window.setInterval(rotatePlanet, 20)
 
-var planet = createSphere()
-scene.add(planet)
 scene.add(createLight())
 scene.add(createDirectionalLight())
