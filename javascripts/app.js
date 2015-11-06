@@ -22,50 +22,57 @@ function createDirectionalLight() {
   return directionalLight
 }
 
-function createShip() {
-  var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.3)
-  var material = new THREE.MeshPhongMaterial({
-    color: 'lightgrey'
-  })
-  var mesh = new THREE.Mesh(geometry, material)
-  mesh.position.x = 1
-  mesh.position.z = 1
-  return mesh
-}
-
 function rotatePlanet() {
   planet.rotation.y += 0.01
 }
 
 var loader = new THREE.JSONLoader(); // init the loader util
 
-
+var spaceShip
 var modelPath = 'model/spaceship.json'
 
 loader.load(modelPath, function (geometry) {
   var material = new THREE.MeshLambertMaterial({
-    map: THREE.ImageUtils.loadTexture('model/spaceship.png'),  // specify and load the texture
+    color: '#ed8989',
     colorAmbient: [0.480000026226044, 0.480000026226044, 0.480000026226044],
     colorDiffuse: [0.480000026226044, 0.480000026226044, 0.480000026226044],
     colorSpecular: [0.8999999761581421, 0.8999999761581421, 0.8999999761581421]
   });
 
-  var mesh = new THREE.Mesh(
+  spaceShip = new THREE.Mesh(
     geometry,
     material
   );
 
-  mesh.scale.x = 0.1
-  mesh.scale.y = 0.1
-  mesh.scale.z = 0.1
+  spaceShip.scale.x = 0.1
+  spaceShip.scale.y = 0.1
+  spaceShip.scale.z = 0.1
 
-  scene.add(mesh);
+  spaceShip.position.x = 1
+  spaceShip.position.z = 1
+
+  scene.add(spaceShip);
+});
+
+
+document.addEventListener("keydown", function( event ) {
+  if ( event.keyCode === 65 ) {
+    spaceShip.lookAt( new THREE.Vector3(0,0,0) )
+    spaceShip.rotation.y += Math.PI
+
+    var matrix = new THREE.Matrix4()
+    matrix.extractRotation( spaceShip.matrix )
+
+    var direction = new THREE.Vector3( 0, 0, 1 )
+    matrix.multiplyVector3( direction )
+
+    spaceShip.position.add( direction )
+  }
 });
 
 window.setInterval(rotatePlanet, 20)
 
 var planet = createSphere()
 scene.add(planet)
-scene.add(createShip())
 scene.add(createLight())
 scene.add(createDirectionalLight())
