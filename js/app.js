@@ -6,7 +6,7 @@ var initialize = require('./initializer.js').initialize;
 var scene = initialize()
 
 function createSphere () {
-  var geometry = new THREE.CubeGeometry(0.5, 0.5, 0.5)
+  var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5)
   var material = new THREE.MeshPhongMaterial({
     color: '#55BB55',
     shading: THREE.FlatShading
