@@ -1,6 +1,11 @@
 /* global THREE */
 /* global initialize */
 
+var createRenderer = require('./initializer.js').createRenderer;
+var createCamera = require('./initializer.js').createCamera;
+var createRenderLoop = require('./initializer.js').createRenderLoop;
+var initialize = require('./initializer.js').initialize;
+
 var scene = initialize()
 
 function createSphere () {

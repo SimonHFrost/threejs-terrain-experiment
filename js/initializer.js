@@ -59,3 +59,10 @@ function initialize () {
 
   return scene
 }
+
+module.exports = {
+  createRenderer: createRenderer,
+  createCamera: createCamera,
+  createRenderLoop: createRenderLoop,
+  initialize: initialize
+}
