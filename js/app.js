@@ -1,5 +1,4 @@
 /* global THREE */
-/* global initialize */
 
 var initialize = require('./initializer.js').initialize;
 
