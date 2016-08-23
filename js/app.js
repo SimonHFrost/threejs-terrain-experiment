@@ -15,7 +15,7 @@ function createCube () {
 }
 
 function createLight() {
-  return new THREE.AmbientLight( 0xCCCCCC, 0.5 );
+  return new THREE.AmbientLight( 0xEEEEEE, 0.75 );
 }
 
 function createDirectionalLight() {
