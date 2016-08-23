@@ -39,21 +39,6 @@ loader.load(modelPath, function (geometry) {
   scene.add(cube);
 });
 
-document.addEventListener("keydown", function( event ) {
-  if ( event.keyCode === 65 ) {
-    spaceShip.lookAt( new THREE.Vector3(0,0,0) );
-    spaceShip.rotation.y += Math.PI;
-
-    var matrix = new THREE.Matrix4();
-    matrix.extractRotation( spaceShip.matrix );
-
-    var direction = new THREE.Vector3( 0, 0, 1 );
-    matrix.multiplyVector3( direction );
-
-    spaceShip.position.add( direction );
-  }
-});
-
 window.setInterval(rotatePlanet, 20);
 
 scene.add(createLight());
