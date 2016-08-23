@@ -37,10 +37,7 @@ var modelPath = 'model/spaceship.json';
 loader.load(modelPath, function (geometry) {
   var material = new THREE.MeshLambertMaterial({
     color: '#ed8989',
-    shading: THREE.FlatShading,
-    colorAmbient: [0.480000026226044, 0.480000026226044, 0.480000026226044],
-    colorDiffuse: [0.480000026226044, 0.480000026226044, 0.480000026226044],
-    colorSpecular: [0.8999999761581421, 0.8999999761581421, 0.8999999761581421]
+    shading: THREE.FlatShading
   });
 
   spaceShip = new THREE.Mesh(
