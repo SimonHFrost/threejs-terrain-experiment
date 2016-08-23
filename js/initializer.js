@@ -42,16 +42,10 @@ function createRenderLoop () {
 }
 
 function initialize () {
-  var scene = null;
-  var camera = null;
-  var renderer = null;
-  var renderLoop = null;
-
-  renderer = createRenderer();
-  renderLoop = createRenderLoop();
-
-  scene = new THREE.Scene();
-  camera = createCamera(renderer);
+  var renderer = createRenderer();
+  var renderLoop = createRenderLoop();
+  var scene = new THREE.Scene();
+  var camera = createCamera(renderer);
 
   renderLoop.push(function () {
     renderer.render(scene, camera);
