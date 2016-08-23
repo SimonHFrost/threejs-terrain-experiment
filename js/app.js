@@ -29,10 +29,10 @@ function rotatePlanet() {
   planet.rotation.y -= 0.01
 }
 
-var loader = new THREE.JSONLoader(); // init the loader util
+var loader = new THREE.JSONLoader();
 
-var spaceShip
-var planet
+var spaceShip = null;
+var planet = null;
 var modelPath = 'model/spaceship.json'
 
 loader.load(modelPath, function (geometry) {
