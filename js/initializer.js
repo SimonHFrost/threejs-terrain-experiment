@@ -61,8 +61,5 @@ function initialize () {
 }
 
 module.exports = {
-  createRenderer: createRenderer,
-  createCamera: createCamera,
-  createRenderLoop: createRenderLoop,
   initialize: initialize
 }
