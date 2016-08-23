@@ -4,10 +4,10 @@ var initialize = require('./initializer.js').initialize;
 
 var scene = initialize();
 
-function createSphere () {
+function createCube () {
   var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
   var material = new THREE.MeshPhongMaterial({
-    color: '#55BB55',
+    color: '#ed8989',
     shading: THREE.FlatShading
   });
   var mesh = new THREE.Mesh(geometry, material);
@@ -25,13 +25,13 @@ function createDirectionalLight() {
 }
 
 function rotatePlanet() {
-  planet.rotation.y -= 0.01;
+  cube.rotation.y -= 0.01;
 }
 
 var loader = new THREE.JSONLoader();
 
 var spaceShip = null;
-var planet = null;
+var cube = null;
 var modelPath = 'model/spaceship.json';
 
 loader.load(modelPath, function (geometry) {
@@ -54,9 +54,9 @@ loader.load(modelPath, function (geometry) {
 
   spaceShip.position.z = 1;
 
-  planet = createSphere();
-  planet.add(spaceShip);
-  scene.add(planet);
+  cube = createCube();
+  cube.add(spaceShip);
+  scene.add(cube);
 });
 
 document.addEventListener("keydown", function( event ) {
