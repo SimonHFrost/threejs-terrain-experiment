@@ -14,7 +14,7 @@ function createSphere () {
 }
 
 function createLight() {
-  return new THREE.AmbientLight( 0x999999, 0.5 );
+  return new THREE.AmbientLight( 0xCCCCCC, 0.5 );
 }
 
 function createDirectionalLight() {
