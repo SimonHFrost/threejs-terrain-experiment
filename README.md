@@ -12,6 +12,10 @@ A three.js example that displays a rotating spaceship model on a page.
  - Run `webpack-dev-server`
  - This will run a server at localhost:8080 where you will see a rotating spaceship
 
+## Extending the Boilerplate
+
+- Rename the directory
+- Update the remote url with `git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
 ## Linting
 
