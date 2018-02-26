@@ -11,3 +11,9 @@ A simple three.js example that displays a rotating spaceship model on a page.
  - Run `npm install`
  - Run `webpack-dev-server`
  - This will run a server at localhost:8080 where you will see a rotating spaceship
+
+
+## Linting
+
+- This project is Standard compliant
+- Run `npm install -g standard` and `standard` in the `/js` folder to check for linting errors
