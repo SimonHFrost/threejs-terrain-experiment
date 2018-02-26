@@ -1,16 +1,6 @@
 var THREE = require('three');
 
-function createCube () {
-  var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-  var material = new THREE.MeshPhongMaterial({
-    color: '#ed8989',
-    flatShading: true
-  });
-  var mesh = new THREE.Mesh(geometry, material);
-  return mesh;
-}
-
-function createLight() {
+function createAmbientLight() {
   return new THREE.AmbientLight( 0xEEEEEE, 0.75 );
 }
 
@@ -20,8 +10,26 @@ function createDirectionalLight() {
   return directionalLight;
 }
 
+function createSpaceship(geometry) {
+  var material = new THREE.MeshLambertMaterial({
+    color: '#ed8989',
+    flatShading: true
+  });
+
+  spaceship = new THREE.Mesh(
+    geometry,
+    material
+  );
+
+  spaceship.scale.x = 0.1;
+  spaceship.scale.y = 0.1;
+  spaceship.scale.z = 0.1;
+
+  return spaceship;
+}
+
 module.exports = {
-  createCube: createCube,
-  createLight: createLight,
-  createDirectionalLight: createDirectionalLight
+  createAmbientLight: createAmbientLight,
+  createDirectionalLight: createDirectionalLight,
+  createSpaceship: createSpaceship
 }

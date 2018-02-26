@@ -1,45 +1,27 @@
 var THREE = require('three');
 
 var initialize = require('./initializer.js').initialize;
-var createCube = require('./object-creator.js').createCube;
-var createLight = require('./object-creator.js').createLight;
+var createAmbientLight = require('./object-creator.js').createAmbientLight;
 var createDirectionalLight = require('./object-creator.js').createDirectionalLight;
+var createSpaceship = require('./object-creator.js').createSpaceship;
 
 var scene = initialize();
 
 var loader = new THREE.JSONLoader();
 
-var spaceShip = null;
-var cube = null;
+var spaceship = null;
 var modelPath = 'model/spaceship.json';
 
-function rotatePlanet() {
-  cube.rotation.y -= 0.01;
+function rotateSpaceship() {
+  spaceship.rotation.y -= 0.01;
 }
 
 loader.load(modelPath, function (geometry) {
-  var material = new THREE.MeshLambertMaterial({
-    color: '#ed8989',
-    flatShading: true
-  });
-
-  spaceShip = new THREE.Mesh(
-    geometry,
-    material
-  );
-
-  spaceShip.scale.x = 0.1;
-  spaceShip.scale.y = 0.1;
-  spaceShip.scale.z = 0.1;
-
-  spaceShip.position.z = 1;
-
-  cube = createCube();
-  cube.add(spaceShip);
-  scene.add(cube);
+  spaceship = createSpaceship(geometry);
+  scene.add(spaceship);
 });
 
-window.setInterval(rotatePlanet, 20);
+window.setInterval(rotateSpaceship, 20);
 
-scene.add(createLight());
+scene.add(createAmbientLight());
 scene.add(createDirectionalLight());
