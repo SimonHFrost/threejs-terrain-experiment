@@ -16,7 +16,7 @@ function createSpaceship (geometry) {
     flatShading: true
   })
 
-  spaceship = new THREE.Mesh(
+  var spaceship = new THREE.Mesh(
     geometry,
     material
   )
