@@ -1,8 +1,10 @@
+var THREE = require('three');
+
 function createCube () {
   var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
   var material = new THREE.MeshPhongMaterial({
     color: '#ed8989',
-    shading: THREE.FlatShading
+    flatShading: true
   });
   var mesh = new THREE.Mesh(geometry, material);
   return mesh;

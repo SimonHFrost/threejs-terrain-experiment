@@ -1,5 +1,5 @@
-/* global THREE */
 /* global requestAnimationFrame */
+var THREE = require('three');
 
 function createRenderer () {
   var renderer = new THREE.WebGLRenderer({
@@ -15,8 +15,9 @@ function createCamera (renderer) {
   var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
   camera.position.z = 5;
   camera.position.y = 3;
-  // NOTE: unused variable must be assigned for the orbit controller to work
-  var controls = new THREE.OrbitControls(camera);
+  // FIXME: Add orbit controller dependency?
+  // var controls = new THREE.OrbitControls(camera);
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
 
   window.addEventListener('resize', function () {
     renderer.setSize(window.innerWidth, window.innerHeight);

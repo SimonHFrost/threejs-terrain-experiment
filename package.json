@@ -1,1 +1,25 @@
-{}
+{
+  "name": "threejs-cube-boilerplate",
+  "description": "[![mit-licence](http://img.shields.io/:license-mit-blue.svg)](http://opensource.org/licenses/MIT) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "three": "0.90.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonHFrost/threejs-cube-boilerplate.git"
+  },
+  "author": "Simon Frost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SimonHFrost/threejs-cube-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SimonHFrost/threejs-cube-boilerplate#readme"
+}

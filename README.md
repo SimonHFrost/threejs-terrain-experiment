@@ -8,5 +8,6 @@ A simple three.js example that displays a rotating cube on a page.
 
  - Clone this repository
  - Run `npm install webpack-dev-server -g`
+ - Run `npm install`
  - Run `webpack-dev-server`
  - This will run a server at localhost:8080 where you will see a rotating cube

@@ -1,4 +1,4 @@
-/* global THREE */
+var THREE = require('three');
 
 var initialize = require('./initializer.js').initialize;
 var createCube = require('./object-creator.js').createCube;
@@ -20,7 +20,7 @@ function rotatePlanet() {
 loader.load(modelPath, function (geometry) {
   var material = new THREE.MeshLambertMaterial({
     color: '#ed8989',
-    shading: THREE.FlatShading
+    flatShading: true
   });
 
   spaceShip = new THREE.Mesh(
