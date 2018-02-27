@@ -6,7 +6,7 @@ function createRenderer () {
   const renderer = new THREE.WebGLRenderer({
     antialias: true
   })
-  renderer.setClearColor(new THREE.Color('lightblue'), 1)
+  renderer.setClearColor(new THREE.Color('black'), 1)
   renderer.setSize(window.innerWidth, window.innerHeight)
 
   const containerComponent = document.getElementById('webgl')
