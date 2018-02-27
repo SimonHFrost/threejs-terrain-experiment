@@ -36,8 +36,8 @@ function createCamera (renderer) {
 function createRenderLoop () {
   var renderLoop = []
   var before = null
-  requestAnimationFrame(function animate (now) {
-    requestAnimationFrame(animate)
+  window.requestAnimationFrame(function animate (now) {
+    window.requestAnimationFrame(animate)
     before = before || now - 1000 / 60
     var deltaMsec = Math.min(200, now - before)
     before = now
