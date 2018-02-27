@@ -1,4 +1,3 @@
-/* global requestAnimationFrame */
 var THREE = require('three')
 
 function createRenderer () {
@@ -7,7 +6,14 @@ function createRenderer () {
   })
   renderer.setClearColor(new THREE.Color('lightblue'), 1)
   renderer.setSize(window.innerWidth, window.innerHeight)
-  document.body.appendChild(renderer.domElement)
+
+  var containerComponent = document.getElementById('webgl')
+  if (containerComponent) {
+    containerComponent.appendChild(renderer.domElement)
+  } else {
+    throw new Error('You need to have an element with id \'webgl\'')
+  }
+
   return renderer
 }
 
