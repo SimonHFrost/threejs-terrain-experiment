@@ -12,6 +12,8 @@ A three.js example that displays a rotating spaceship model on a page.
  - Run `webpack-dev-server`
  - This will run a server at localhost:8080 where you will see a rotating spaceship
 
+ - Run with `webpack` if you want to export `dist/bundle.js` to other projects (they need a div with id 'webgl' for the js to target)
+
 ## Duplicating this as a new project
 
 - Rename the directory
