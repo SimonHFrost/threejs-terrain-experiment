@@ -6,7 +6,8 @@ const createDirectionalLight = require('./object-creator.js').createDirectionalL
 const createSpaceship = require('./object-creator.js').createSpaceship
 const createCube = require('./object-creator.js').createCube
 
-const scene = initialize()
+const output = initialize()
+const scene = output.scene
 
 const loader = new THREE.JSONLoader()
 

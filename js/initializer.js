@@ -64,7 +64,10 @@ function initialize () {
     renderer.render(scene, camera)
   })
 
-  return scene
+  return {
+    scene,
+    camera
+  }
 }
 
 module.exports = {
