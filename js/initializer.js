@@ -1,13 +1,13 @@
-var THREE = require('three')
+const THREE = require('three');
 
 function createRenderer () {
-  var renderer = new THREE.WebGLRenderer({
+  const renderer = new THREE.WebGLRenderer({
     antialias: true
-  })
+  });
   renderer.setClearColor(new THREE.Color('lightblue'), 1)
   renderer.setSize(window.innerWidth, window.innerHeight)
 
-  var containerComponent = document.getElementById('webgl')
+  const containerComponent = document.getElementById('webgl');
   if (containerComponent) {
     containerComponent.appendChild(renderer.domElement)
   } else {
@@ -18,7 +18,7 @@ function createRenderer () {
 }
 
 function createCamera (renderer) {
-  var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000)
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
   camera.position.z = 5
   camera.position.y = 3
   // FIXME: Add orbit controller dependency?
@@ -34,12 +34,12 @@ function createCamera (renderer) {
 }
 
 function createRenderLoop () {
-  var renderLoop = []
-  var before = null
+  const renderLoop = [];
+  let before = null;
   window.requestAnimationFrame(function animate (now) {
     window.requestAnimationFrame(animate)
     before = before || now - 1000 / 60
-    var deltaMsec = Math.min(200, now - before)
+    const deltaMsec = Math.min(200, now - before);
     before = now
     renderLoop.forEach(renderLoop => {
       renderLoop(deltaMsec / 1000, now / 1000)
@@ -49,10 +49,10 @@ function createRenderLoop () {
 }
 
 function initialize () {
-  var renderer = createRenderer()
-  var renderLoop = createRenderLoop()
-  var scene = new THREE.Scene()
-  var camera = createCamera(renderer)
+  const renderer = createRenderer();
+  const renderLoop = createRenderLoop();
+  const scene = new THREE.Scene();
+  const camera = createCamera(renderer);
 
   renderLoop.push(() => {
     renderer.render(scene, camera)

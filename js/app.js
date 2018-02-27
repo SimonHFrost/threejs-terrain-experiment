@@ -1,16 +1,16 @@
-var THREE = require('three')
+const THREE = require('three');
 
-var initialize = require('./initializer.js').initialize
-var createAmbientLight = require('./object-creator.js').createAmbientLight
-var createDirectionalLight = require('./object-creator.js').createDirectionalLight
-var createSpaceship = require('./object-creator.js').createSpaceship
+const initialize = require('./initializer.js').initialize;
+const createAmbientLight = require('./object-creator.js').createAmbientLight;
+const createDirectionalLight = require('./object-creator.js').createDirectionalLight;
+const createSpaceship = require('./object-creator.js').createSpaceship;
 
-var scene = initialize()
+const scene = initialize();
 
-var loader = new THREE.JSONLoader()
+const loader = new THREE.JSONLoader();
 
-var spaceship = null
-var modelPath = 'model/spaceship.json'
+let spaceship = null;
+const modelPath = 'model/spaceship.json';
 
 function rotateSpaceship () {
   spaceship.rotation.y -= 0.01
