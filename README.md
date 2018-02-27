@@ -27,3 +27,4 @@ A three.js example that displays a rotating spaceship model on a page.
 - Add orbit controller as optional feature
 - Run 'Lebab' package to use es6+ features
 - Add capability to export bundle.js for usage in other projects
+- Export both scene and camera from initializer.js
