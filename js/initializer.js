@@ -1,4 +1,6 @@
 const THREE = require('three');
+const OrbitControls = require('three-orbit-controls')(THREE)
+const ORBIT_CONTROLS_ENABLED = true
 
 function createRenderer () {
   const renderer = new THREE.WebGLRenderer({
@@ -21,9 +23,12 @@ function createCamera (renderer) {
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
   camera.position.z = 5
   camera.position.y = 3
-  // FIXME: Add orbit controller dependency?
-  // var controls = new THREE.OrbitControls(camera);
+
   camera.lookAt(new THREE.Vector3(0, 0, 0))
+
+  if (ORBIT_CONTROLS_ENABLED) {
+    controls = new OrbitControls(camera)
+  }
 
   window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight)

@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "three": "0.90.0"
+    "three": "0.90.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "directories": {
     "lib": "lib"
