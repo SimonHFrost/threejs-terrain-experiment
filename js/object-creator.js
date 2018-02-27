@@ -28,8 +28,16 @@ function createSpaceship (geometry) {
   return spaceship
 }
 
+function createCube () {
+  const geometry = new THREE.BoxBufferGeometry( 1, 1, 1 )
+  const material = new THREE.MeshLambertMaterial( { color: 0xED8989, flatShading: true } )
+  const mesh = new THREE.Mesh( geometry, material )
+  return mesh
+}
+
 module.exports = {
   createAmbientLight,
   createDirectionalLight,
-  createSpaceship
+  createSpaceship,
+  createCube
 }
