@@ -10,7 +10,7 @@ const scene = initialize()
 
 const loader = new THREE.JSONLoader()
 
-const LOAD_MODEL = false
+const LOAD_MODEL = true
 
 if (LOAD_MODEL) {
   let spaceship = null
