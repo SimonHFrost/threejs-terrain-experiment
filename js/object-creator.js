@@ -29,7 +29,7 @@ function createSpaceship (geometry) {
 }
 
 module.exports = {
-  createAmbientLight: createAmbientLight,
-  createDirectionalLight: createDirectionalLight,
-  createSpaceship: createSpaceship
+  createAmbientLight,
+  createDirectionalLight,
+  createSpaceship
 }

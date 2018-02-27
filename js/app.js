@@ -16,7 +16,7 @@ function rotateSpaceship () {
   spaceship.rotation.y -= 0.01
 }
 
-loader.load(modelPath, function (geometry) {
+loader.load(modelPath, geometry => {
   spaceship = createSpaceship(geometry)
   scene.add(spaceship)
 })

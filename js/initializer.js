@@ -25,7 +25,7 @@ function createCamera (renderer) {
   // var controls = new THREE.OrbitControls(camera);
   camera.lookAt(new THREE.Vector3(0, 0, 0))
 
-  window.addEventListener('resize', function () {
+  window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight)
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
@@ -41,7 +41,7 @@ function createRenderLoop () {
     before = before || now - 1000 / 60
     var deltaMsec = Math.min(200, now - before)
     before = now
-    renderLoop.forEach(function (renderLoop) {
+    renderLoop.forEach(renderLoop => {
       renderLoop(deltaMsec / 1000, now / 1000)
     })
   })
@@ -54,7 +54,7 @@ function initialize () {
   var scene = new THREE.Scene()
   var camera = createCamera(renderer)
 
-  renderLoop.push(function () {
+  renderLoop.push(() => {
     renderer.render(scene, camera)
   })
 
@@ -62,5 +62,5 @@ function initialize () {
 }
 
 module.exports = {
-  initialize: initialize
+  initialize
 }
