@@ -8,23 +8,21 @@ const createCube = require('./object-creator.js').createCube
 const output = initialize()
 const scene = output.scene
 
-// scene.add(createCube())
 scene.add(createAmbientLight())
 scene.add(createDirectionalLight())
 
-
-
-
 const geometry = new THREE.Geometry();
 
-geometry.vertices.push(
-	new THREE.Vector3( -10,  10, 0 ),
-	new THREE.Vector3( -10, -10, 0 ),
-	new THREE.Vector3(  10, -10, 0 )
-);
+for (let i = -5; i < 5; i++) {
+  for (let j = -5; j < 5; j++) {
+    geometry.vertices.push(new THREE.Vector3(i, j, 0))
+  }
+}
 
-geometry.faces.push( new THREE.Face3( 0, 1, 2 ), new THREE.Face3( 2, 1, 0 ) );
-geometry.computeBoundingSphere();
+geometry.faces.push(
+   new THREE.Face3( 0, 1, 10 ),
+   new THREE.Face3( 10, 1, 0 )
+)
 
 const material = new THREE.MeshLambertMaterial({
   color: '#ed8989',
