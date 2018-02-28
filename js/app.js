@@ -33,13 +33,17 @@ for (let row = 0; row < 9; row++) {
 }
 
 const material = new THREE.MeshLambertMaterial({
-  color: '#ed8989',
+  color: '#00CC00',
   wireframe: true
 })
 
-const shape = new THREE.Mesh(
+const mesh = new THREE.Mesh(
   geometry,
   material
 )
 
-scene.add(shape)
+setInterval(() => {
+  mesh.rotation.z += 0.002
+}, 20)
+
+scene.add(mesh)

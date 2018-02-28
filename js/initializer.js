@@ -21,8 +21,8 @@ function createRenderer () {
 
 function createCamera (renderer) {
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000)
-  camera.position.z = 15
-  camera.position.y = 3
+  camera.position.z = 10
+  camera.position.y = -15
 
   camera.lookAt(new THREE.Vector3(0, 0, 0))
 
