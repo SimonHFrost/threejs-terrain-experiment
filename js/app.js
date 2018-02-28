@@ -3,7 +3,6 @@ const THREE = require('three')
 const initialize = require('./initializer.js').initialize
 const createAmbientLight = require('./object-creator.js').createAmbientLight
 const createDirectionalLight = require('./object-creator.js').createDirectionalLight
-const createCube = require('./object-creator.js').createCube
 
 const output = initialize()
 const scene = output.scene
@@ -15,7 +14,10 @@ const geometry = new THREE.Geometry();
 
 for (let i = -5; i < 5; i++) {
   for (let j = -5; j < 5; j++) {
-    geometry.vertices.push(new THREE.Vector3(i, j, 0))
+    let x = i - 0.2 + 0.4 * Math.random()
+    let y = j - 0.2 + 0.4 * Math.random()
+    let z = 0.2 + 0.4 * Math.random()
+    geometry.vertices.push(new THREE.Vector3(x, y, z))
   }
 }
 
@@ -32,7 +34,6 @@ for (let row = 0; row < 9; row++) {
 
 const material = new THREE.MeshLambertMaterial({
   color: '#ed8989',
-  flatShading: true
 })
 
 const shape = new THREE.Mesh(
