@@ -20,7 +20,6 @@ for (let i = -5; i < 5; i++) {
 }
 
 geometry.faces.push(
-   new THREE.Face3( 0, 1, 10 ),
    new THREE.Face3( 10, 1, 0 )
 )
 
