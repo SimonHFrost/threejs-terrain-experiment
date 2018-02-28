@@ -34,6 +34,7 @@ for (let row = 0; row < 9; row++) {
 
 const material = new THREE.MeshLambertMaterial({
   color: '#ed8989',
+  wireframe: true
 })
 
 const shape = new THREE.Mesh(
