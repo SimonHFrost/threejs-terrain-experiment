@@ -20,7 +20,10 @@ for (let i = -5; i < 5; i++) {
 }
 
 geometry.faces.push(
-   new THREE.Face3( 10, 1, 0 )
+   new THREE.Face3( 0, 10, 1 ),
+   new THREE.Face3( 1, 10, 11),
+   new THREE.Face3( 1, 11, 2),
+   new THREE.Face3( 2, 11, 12)
 )
 
 const material = new THREE.MeshLambertMaterial({
