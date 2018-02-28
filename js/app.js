@@ -21,16 +21,14 @@ for (let i = -5; i < 5; i++) {
 
 for (let row = 0; row < 9; row++) {
   for (let col = 0; col < 9; col++) {
-    geometry.faces.push(new THREE.Face3(row * 10 + col, (row + 1) * 10 + col, row * 10 + col + 1))
+    let first = row * 10 + col
+    let second = (row + 1) * 10 + col
+    let third = row * 10 + col + 1
+    let fourth = (row + 1) * 10 + col + 1
+    geometry.faces.push(new THREE.Face3(first, second, third))
+    geometry.faces.push(new THREE.Face3(second, fourth, third))
   }
 }
-
-// geometry.faces.push(
-//    new THREE.Face3( 0, 10, 1 ),
-//    new THREE.Face3( 1, 10, 11),
-//    new THREE.Face3( 1, 11, 2),
-//    new THREE.Face3( 2, 11, 12)
-// )
 
 const material = new THREE.MeshLambertMaterial({
   color: '#ed8989',
