@@ -15,8 +15,8 @@ const geometry = new THREE.Geometry();
 for (let i = -5; i < 5; i++) {
   for (let j = -5; j < 5; j++) {
     let x = i - 0.2 + 0.4 * Math.random()
-    let y = j - 0.2 + 0.4 * Math.random()
-    let z = 0.2 + 0.4 * Math.random()
+    let z = j - 0.2 + 0.4 * Math.random()
+    let y = 0.2 + 0.4 * Math.random()
     geometry.vertices.push(new THREE.Vector3(x, y, z))
   }
 }
@@ -43,7 +43,7 @@ const mesh = new THREE.Mesh(
 )
 
 setInterval(() => {
-  mesh.rotation.z += 0.002
+  mesh.rotation.y += 0.002
 }, 20)
 
 scene.add(mesh)
