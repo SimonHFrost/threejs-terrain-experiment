@@ -37,9 +37,10 @@ const drawTerrain = (size) => {
   }
 
   const material = new THREE.MeshLambertMaterial({
-    color: '#00CC00',
-    wireframe: true
+    color: '#00CC00'
   })
+
+  geometry.computeFaceNormals()
 
   return new THREE.Mesh(
     geometry,
@@ -56,7 +57,7 @@ meshBottom.position.y = -10
 setInterval(() => {
   meshTop.rotation.y += 0.004
   meshMiddle.rotation.y += 0.002
-  meshBottom.rotation.y += 0.001
+  meshBottom.rotation.y += 0.0005
 }, 20)
 
 scene.add(meshTop)
