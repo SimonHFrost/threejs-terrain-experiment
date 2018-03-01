@@ -31,8 +31,8 @@ const drawTerrain = (size) => {
       let second = (row + 1) * size + col
       let third = row * size + col + 1
       let fourth = (row + 1) * size + col + 1
-      geometry.faces.push(new THREE.Face3(first, second, third))
-      geometry.faces.push(new THREE.Face3(second, fourth, third))
+      geometry.faces.push(new THREE.Face3(third, second, first))
+      geometry.faces.push(new THREE.Face3(third, fourth, second))
     }
   }
 
