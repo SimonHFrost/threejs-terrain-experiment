@@ -48,18 +48,10 @@ const drawTerrain = (size) => {
   )
 }
 
-const meshTop = drawTerrain(10)
-const meshMiddle = drawTerrain(20)
-meshMiddle.position.y = -5
-const meshBottom = drawTerrain(50)
-meshBottom.position.y = -10
+const mesh = drawTerrain(10)
 
 setInterval(() => {
-  meshTop.rotation.y += 0.004
-  meshMiddle.rotation.y += 0.002
-  meshBottom.rotation.y += 0.0005
+  mesh.rotation.y += 0.002
 }, 20)
 
-scene.add(meshTop)
-scene.add(meshMiddle)
-scene.add(meshBottom)
+scene.add(mesh)
