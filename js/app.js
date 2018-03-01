@@ -12,9 +12,10 @@ scene.add(createDirectionalLight())
 
 const RANDOM_CONSTANT = 0.5
 
-const geometry = new THREE.Geometry();
 
 const drawTerrain = (size) => {
+  const geometry = new THREE.Geometry();
+
   for (let i = -(size/2); i < size/2; i++) {
     for (let j = -(size/2); j < (size/2); j++) {
       let x = i - (RANDOM_CONSTANT / 2) + RANDOM_CONSTANT * Math.random()
@@ -46,10 +47,18 @@ const drawTerrain = (size) => {
   )
 }
 
-const mesh = drawTerrain(20)
+const meshTop = drawTerrain(10)
+const meshMiddle = drawTerrain(20)
+meshMiddle.position.y = -5
+const meshBottom = drawTerrain(50)
+meshBottom.position.y = -10
 
 setInterval(() => {
-  mesh.rotation.y += 0.002
+  meshTop.rotation.y += 0.004
+  meshMiddle.rotation.y += 0.002
+  meshBottom.rotation.y += 0.001
 }, 20)
 
-scene.add(mesh)
+scene.add(meshTop)
+scene.add(meshMiddle)
+scene.add(meshBottom)
