@@ -10,13 +10,15 @@ const scene = output.scene
 scene.add(createAmbientLight())
 scene.add(createDirectionalLight())
 
+const RANDOM_CONSTANT = 0.5
+
 const geometry = new THREE.Geometry();
 
 for (let i = -5; i < 5; i++) {
   for (let j = -5; j < 5; j++) {
-    let x = i - 0.2 + 0.4 * Math.random()
-    let z = j - 0.2 + 0.4 * Math.random()
-    let y = 0.2 + 0.4 * Math.random()
+    let x = i - (RANDOM_CONSTANT / 2) + RANDOM_CONSTANT * Math.random()
+    let z = j - (RANDOM_CONSTANT / 2) + RANDOM_CONSTANT * Math.random()
+    let y = (RANDOM_CONSTANT / 2) + RANDOM_CONSTANT * Math.random()
     geometry.vertices.push(new THREE.Vector3(x, y, z))
   }
 }
