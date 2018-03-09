@@ -54,5 +54,5 @@ const mesh = drawTerrain(20)
 scene.add(mesh)
 
 setInterval(() => {
-  mesh.rotation.y += 0.01
-}, 50)
+  mesh.rotation.y += 0.005
+}, 25)
