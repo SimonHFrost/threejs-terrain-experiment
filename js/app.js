@@ -48,30 +48,5 @@ const drawTerrain = (size) => {
   )
 }
 
-const mesh = drawTerrain(10)
-const mesh2 = drawTerrain(20)
-mesh2.position.y = -1
-const mesh3 = drawTerrain(30)
-mesh3.position.y = -2
-const mesh4 = drawTerrain(40)
-mesh4.position.y = -3
-const mesh5 = drawTerrain(50)
-mesh5.position.y = -4
-const mesh6 = drawTerrain(60)
-mesh6.position.y = -5
-
-setInterval(() => {
-  mesh.rotation.y += 0.006
-  mesh2.rotation.y += 0.005
-  mesh3.rotation.y += 0.004
-  mesh4.rotation.y += 0.003
-  mesh5.rotation.y += 0.002
-  mesh6.rotation.y += 0.001
-}, 20)
-
+const mesh = drawTerrain(20)
 scene.add(mesh)
-scene.add(mesh2)
-scene.add(mesh3)
-scene.add(mesh4)
-scene.add(mesh5)
-scene.add(mesh6)
